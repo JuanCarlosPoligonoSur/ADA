@@ -45,8 +45,8 @@ public class Ejercicio1 {
             new File(d1, "f11").createNewFile();
 
             new File(d1, "f12").createNewFile();
-        new File(d21, "f21").createNewFile();
-        new File(d22, "f222").createNewFile();
+            new File(d21, "f21").createNewFile();
+            new File(d22, "f222").createNewFile();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
