@@ -29,7 +29,7 @@ public class Main {
 
         }
 
-        PRUEBA DE GITHUB EN CLASE
+        PRUEBA DE GITHUB EN CLASE 2
 
     }
 }
