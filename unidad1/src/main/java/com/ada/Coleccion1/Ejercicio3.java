@@ -27,7 +27,6 @@ public class Ejercicio3 {
             //Imprimo el nombre de cada elemento.
             System.out.println(elemento.getName());
 
-            //Una función que he encontrado consigue la ruta total del elemento  .getAbsolutePath()
 
             //Si el elemento es una carpeta, vuelvo a llamar al método listar
             if (elemento.isDirectory()) {
