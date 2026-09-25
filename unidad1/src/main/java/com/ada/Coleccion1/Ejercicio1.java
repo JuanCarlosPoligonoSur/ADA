@@ -1,5 +1,3 @@
-package com.ada.Coleccion1;
-
 /*1. Crea un método de Java que cree la siguiente estructura de ficheros y directorios en el directorio desde el escritorio de tu ordenador:
 
 d 
@@ -15,6 +13,10 @@ f12
         d31
 
 */
+
+package com.ada.Coleccion1;
+
+
 
 import java.io.*;
 public class Ejercicio1 {
