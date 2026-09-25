@@ -1,7 +1,7 @@
 //3. Modifica el método del ejercicio 2 para que pueda listar cualquier estructura de ficheros y directorios que contenga el directorio 
 // raíz pasado como parámetro. Pruébalo con varias estructuras de directorios y ficheros.
 
-package com.ada.Coleccion1;
+package main.java.com.ada.Coleccion1;
 import java.io.*;
 
 public class Ejercicio3 {
