@@ -1,5 +1,5 @@
 package com.ada.Coleccion1;
-//Hecho con IA, repasar bien.
+
 /*1. Crea un método de Java que cree la siguiente estructura de ficheros y directorios en el directorio desde el escritorio de tu ordenador:
 
 d 
@@ -21,10 +21,14 @@ public class Ejercicio1 {
   
     public static void main(String[] args) {
 
-        // Directorio Escritorio del usuario
+        // Estamos sacando la ruta al escritorio,sacamos el usuario, después el separador de archivos (/ linux o mac, \windows) y después Desktop. 
+        // Si el escritorio no se llama Desktop falla el programa, se podría poner un bucle para que el usuario introduzca la ruta que quiera.
+
         String escritorio = System.getProperty("user.home") + File.separator + "Desktop";
 
-        // Directorios
+        // Creo objetos File que representan los directorios
+
+
         File d = new File(escritorio, "d");
         File d1 = new File(d, "d1");
         File d2 = new File(d, "d2");
@@ -32,8 +36,11 @@ public class Ejercicio1 {
         File d22 = new File(d2, "d22");
         File d3 = new File(d, "d3");
         File d31 = new File(d3, "d31");
+    
 
-        // Crear directorios
+
+        // Crear directorios, si mkdirs() crea también los padres. 
+        // mkdir() tendría que haber creado también d, d2,d3 ya que solo crea el directorio indicado.
         d1.mkdirs();
         d21.mkdirs();
         d22.mkdirs();
@@ -42,20 +49,30 @@ public class Ejercicio1 {
         
         // Ficheros
         try {
-            new File(d1, "f11").createNewFile();
 
+            new File(d1, "f11").createNewFile();
             new File(d1, "f12").createNewFile();
             new File(d21, "f21").createNewFile();
             new File(d22, "f222").createNewFile();
+
+    
+
+
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            //printStackTrace() muestra por consola la información de una excepción, incluyendo dónde y cómo ocurrió.
+            //TODO Auto-generated catch block--- TODO= TO DO. Te lo pone el IDE para que lo revises. 
+
+            
             e.printStackTrace();
+            
+            
+            // otras Convenciones// TODO: hacer esto // FIXME: corregir esto // NOTE: tener esto en cuenta
 
         }
         
 
         System.out.println("Estructura creada correctamente.");
-        sdffds
+    
       
 
     }
