@@ -15,18 +15,30 @@ public class Ejercicio5 {
 
         //Si hay elementos en el array, creo para cada uno de ellos un Objeto File elemento.
         if (nombres != null) {
+            
+            int contador=0;
+            
             for (String nombre : nombres) {
 
                 File elemento = new File(carpeta, nombre);
 
                 String nombreArchivo=elemento.getName();
-
+                
+                
                 //Si es un archivo y el nombre termina en .extension, lo borra. .delete() devuelve true cuando lo elimina
                 if (elemento.isFile() && nombre.endsWith("." + extension)&& elemento.delete()) {
                     
                     System.out.println("El archivo: " + nombreArchivo+" se ha borrado correctamente");
+                    contador++;
                 }
+                
+               
             }
+
+            if(contador==0){
+
+                System.out.println("No hay archivos que borrar");
+                }
         }
     }
 
