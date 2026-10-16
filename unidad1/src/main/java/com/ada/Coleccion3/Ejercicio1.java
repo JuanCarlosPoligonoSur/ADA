@@ -1,3 +1,4 @@
+//1.	Realiza un programa que realice una copia de una imagen que se encuentre en tu escritorio. 
 package com.ada.Coleccion3;
 
 
