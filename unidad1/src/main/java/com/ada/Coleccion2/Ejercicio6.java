@@ -1,5 +1,7 @@
 package com.ada.Coleccion2;
-
+/*6.	Escribe un programa que, dado un fichero como entrada, 
+cree un nuevo fichero en el que se copie el contenido del primer 
+fichero eliminando los espacios en blanco y convirtiendo las minúsculas en mayúsculas. */
 import java.io.*;
 
 public class Ejercicio6 {
