@@ -1,12 +1,6 @@
 package com.ada.Coleccion2;
+import java.io.*;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 
 //Realiza un programa que cuente el número de palabras de un fichero 
 
@@ -33,43 +27,45 @@ public class Ejercicio5 {
 
         //Para usar un BufferedReader necesito crear primero un FileReader
         //Después va leyendo línea a línea hasta que encuentra null.
-
+        int contadorPalabras = 0;
         int c=0;
         try{
             FileReader fr= new FileReader(rutaArchivo);
             BufferedReader br= new BufferedReader(fr);
 
-          //Leo lcaracter a carácter a carácter al usar br.read()
-            int caracter;
-            //split
-            // bandera que indique si
-            boolean puedoContar=true;  
-            caracterPrevio='';
-            while((caracter=(br.read()))!=-1){                
-               if(caracter!=32 || caracter!=10 ){
-                c++;
-                puedoContar=false;
-               }
-               if(caracter!=32 || caracter!=10 ){
-                caracterpREVIO=CARACTER;
-                if (caracterPrevio) //  Caracter previo es igual 10 o 32 y caracter actual es igual a 10 o 32
-               
-               }else{
-                 puedoContar=false;
-               }
-               
+       
+        int caracter;
+        boolean dentroDePalabra = false;
 
-                
+        // Leemos carácter a carácter.
+        while ((caracter = br.read()) != -1) {
+
+            // Si NO es un espacio ni un salto de línea,
+            // estamos dentro de una palabra.
+            if (caracter != ' ' && caracter != '\n' && caracter != '\r') {
+
+                // Solo contamos la palabra al encontrar su primer carácter.
+                if (!dentroDePalabra) {
+                    contadorPalabras++;
+                    dentroDePalabra = true;
+                }
+
+            } else {
+                // Hemos encontrado un espacio o salto de línea,
+                // por lo que la siguiente letra será el inicio
+                // de una nueva palabra.
+                dentroDePalabra = false;
             }
+        }
 
-        // Hay que cerrar br
         br.close();
 
-        //Capturo excepción de archivo no encontrado
-        }catch(FileNotFoundException e){
-            e.printStackTrace();
-        }
-        System.out.println("El documento contiene "+(c+1)+" palabras.");
+    }catch(IOException e ){
+        e.printStackTrace();
     }
-    
+        System.out.println("El documento contiene "
+                + contadorPalabras + " palabras.");
+    }
 }
+    
+
